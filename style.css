@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Shizuru", cursive;
+  background: radial-gradient(hsl(120, 81%, 29%), hsl(120, 48%, 26%));
+  height: 100vh;
+  color: hsl(0, 10%, 100%);
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.language-selection {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin: 2px 30px;
+  font-size: 2rem;
+}
+
+.overlay {
+  height: 100vh;
+  background-color: hsla(120, 4%, 15%, 0.685);
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.white-box {
+  background-color: white;
+  width: 100vw;
+  height: 20vh;
+  color: hsl(120, 48%, 26%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-game {
+  outline: none;
+  position: absolute;
+  bottom: 30%;
+  background-color: hsl(0, 10%, 100%);
+  color: hsl(120, 48%, 26%);
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-family: "Shizuru", cursive;
+}
+
+.hidden {
+  display: none;
+}
+
+.hangman {
+  width: 140px;
+  height: 200px;
+  margin: 30px;
+}
+
+.word {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.letter-box {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.letter {
+  background-color: hsl(0, 10%, 100%);
+  color: hsl(120, 48%, 26%);
+  font-size: 1.8rem;
+  height: 48px;
+  width: 48px;
+  margin: 4px;
+  display: inline-block;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(41, 41, 41, 0.4);
+}
+
+.inactive {
+  pointer-events: none;
+  background-color: hsl(0, 10%, 100%, 0.3);
+}
+
+@media (max-width: 400px) {
+  body {
+    font-size: 1rem;
+  }
+
+  h1 {
+    line-height: 1.2;
+  }
+}

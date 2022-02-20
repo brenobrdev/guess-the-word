@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shizuru&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="language-selection">
+      <p class="en">🇺🇸</p>
+      <p class="br">🇧🇷</p>
+    </div>
+    <div class="overlay">
+      <div class="white-box">
+        <h1 class="game-over">Game Over Message</h1>
+        <button class="new-game">Play Again!</button>
+      </div>
+    </div>
+    <header>
+      <h1 class="title">Guess the Word!</h1>
+    </header>
+    <svg class="hangman">
+      <path
+        d="M78.0566 17.2281L78.0566 17.2281C91.7885 17.2281 102.92 27.9585 102.92 41.1952L102.92 43.3138C102.92 56.5505 91.7885 67.2809 78.0566 67.2809L78.0566 67.2809C64.3247 67.2809 53.1928 56.5505 53.1928 43.3138L53.1928 41.1952C53.1928 27.9585 64.3247 17.2281 78.0566 17.2281Z"
+        fill="none"
+        fill-rule="evenodd"
+        opacity="1"
+        stroke="#000000"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        class="head hidden"
+      />
+
+      <path
+        d="M78.1749 68.0551C79.0891 69.8835 78.4688 73.4908 78.4688 75.5483C78.4688 78.1255 78.3879 80.6689 78.028 83.1883C77.5066 86.8383 78.1919 90.6923 77.7342 94.3545C76.7617 102.134 78.9978 110.104 78.028 117.862C77.5276 121.865 78.3948 126.093 77.7342 130.057C76.9682 134.652 76.2884 139.172 75.5303 143.721C75.2283 145.533 75.2703 148.071 75.5303 149.892C75.7262 151.263 76.5588 152.072 76.5588 153.565"
+        fill="none"
+        fill-rule="evenodd"
+        opacity="1"
+        stroke="#000000"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        class="torso hidden"
+      />
+      <path
+        d="M77.7342 94.2076C71.5194 100.422 63.9558 105.643 56.871 110.957C54.6564 112.618 51.7654 114.299 49.8186 116.246C48.614 117.451 47.8325 118.415 46.2925 119.185"
+        fill="none"
+        fill-rule="evenodd"
+        opacity="1"
+        stroke="#000000"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        class="left-arm hidden"
+      />
+      <path
+        d="M78.028 94.5014C79.3548 97.155 83.4021 97.8393 85.668 99.3499C94.1663 105.015 102.779 110.373 110.498 117.128C111.828 118.291 116.371 120.058 116.963 121.242"
+        fill="none"
+        fill-rule="evenodd"
+        opacity="1"
+        stroke="#000000"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        class="right-arm hidden"
+      />
+      <path
+        d="M75.8241 153.565C75.0691 153.187 68.133 157.707 67.4495 158.266C65.8102 159.608 63.8555 160.657 62.3072 162.086C58.8561 165.272 56.1978 169.371 52.904 172.665C50.7971 174.772 48.5291 176.419 47.174 179.13"
+        fill="none"
+        fill-rule="evenodd"
+        opacity="1"
+        stroke="#000000"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        class="left-leg hidden"
+      />
+      <path
+        d="M75.2365 153.565C75.8432 153.565 80.2654 156.345 81.2603 156.797C85.122 158.552 89.0353 160.458 92.1327 163.556C93.331 164.754 94.2473 166.074 95.6589 167.082C97.9413 168.712 100.185 170.403 102.417 172.077C103.637 172.992 104.168 174.415 105.209 175.456"
+        fill="none"
+        fill-rule="evenodd"
+        opacity="1"
+        stroke="#000000"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        class="right-leg hidden"
+      />
+      <path
+        d="M8.85916 191.927C10.0904 192.542 17.7225 191.121 19.4971 190.96C24.4775 190.507 30.6287 190.169 35.5508 191.153C36.9573 191.434 38.1338 192.313 39.6125 192.313"
+        fill="none"
+        fill-rule="evenodd"
+        opacity="1"
+        stroke="#000000"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+      <path
+        d="M24.526 189.606C25.7396 188.392 25.327 180.02 25.4931 178.194C26.398 168.24 25.4984 157.783 24.9128 147.827C24.625 142.935 24.5773 138.023 24.3326 133.128C23.9367 125.211 22.8256 117.499 23.172 109.531C23.5339 101.208 24.3232 92.9002 24.7194 84.58C25.2264 73.9333 24.311 63.0883 23.7523 52.4727C23.553 48.6864 22.752 44.7634 22.0115 41.0611C20.7458 34.7325 20.2051 28.0909 19.4971 21.7193C19.0624 17.8068 18.3102 13.9212 19.1103 9.92087C19.1975 9.48491 18.9159 8.76231 19.1103 8.37353C19.5339 7.5263 23.7183 7.79328 24.526 7.79328C29.9891 7.79328 35.5903 7.21303 41.1599 7.21303C50.7502 7.21303 60.3624 5.08544 69.9791 5.08544C70.7005 5.08544 77.7702 4.47509 77.9092 4.89202C78.3699 6.27419 77.7472 8.37844 77.5223 9.72745C77.1331 12.0629 77.1355 14.4887 77.1355 16.8839"
+        fill="none"
+        fill-rule="evenodd"
+        opacity="1"
+        stroke="#000000"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+      <path
+        d="M71.111 27.9778C69.8653 26.7321 67.8023 28.144 66.8594 29.0869C64.2498 31.6966 64.4152 36.4121 68.6463 37.1588C72.3385 37.8103 74.9275 30.0136 72.2201 28.3475C71.1248 27.6735 69.3517 28.0302 68.215 28.4091"
+        fill="none"
+        fill-rule="evenodd"
+        opacity="1"
+        stroke="#000000"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        class="face hidden"
+      />
+      <path
+        d="M90.1507 29.2718C90.4379 28.41 87.581 29.5629 87.3163 29.7031C84.9752 30.9425 80.8135 36.0699 84.8516 37.8365C88.172 39.2892 91.9689 33.9263 91.383 30.997C90.9044 28.604 88.185 28.2613 86.392 29.4566"
+        fill="none"
+        fill-rule="evenodd"
+        opacity="1"
+        stroke="#000000"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        class="face hidden"
+      />
+      <path
+        d="M69.6322 58.1702C69.0716 57.0489 70.4491 54.6358 71.0494 53.7954C73.1831 50.8081 77.1021 48.2837 80.9697 49.1125C84.258 49.8171 85.3244 55.3844 86.885 57.9853"
+        fill="none"
+        fill-rule="evenodd"
+        opacity="1"
+        stroke="#000000"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        class="face hidden"
+      />
+      <path
+        d="M88.5233 39.3996C88.2056 39.4616 88.0739 40.9066 88.0251 41.237C87.8611 42.348 87.3545 47.5744 89.8617 46.5172C91.8052 45.6978 90.1293 41.9557 89.3379 40.8902C89.099 40.5685 88.9304 39.3201 88.5233 39.3996Z"
+        fill="none"
+        fill-rule="evenodd"
+        opacity="1"
+        stroke="#000000"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        class="face hidden"
+      />
+    </svg>
+
+    <div class="word"></div>
+    <div class="letters">
+      <div class="letter">A</div>
+      <div class="letter">B</div>
+      <div class="letter">C</div>
+      <div class="letter">D</div>
+      <div class="letter">E</div>
+      <div class="letter">F</div>
+      <div class="letter">G</div>
+      <div class="letter">H</div>
+      <div class="letter">I</div>
+      <div class="letter">J</div>
+      <div class="letter">K</div>
+      <div class="letter">L</div>
+      <div class="letter">M</div>
+      <div class="letter">N</div>
+      <div class="letter">O</div>
+      <div class="letter">P</div>
+      <div class="letter">Q</div>
+      <div class="letter">R</div>
+      <div class="letter">S</div>
+      <div class="letter">T</div>
+      <div class="letter">U</div>
+      <div class="letter">V</div>
+      <div class="letter">W</div>
+      <div class="letter">X</div>
+      <div class="letter">Y</div>
+      <div class="letter">Z</div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
